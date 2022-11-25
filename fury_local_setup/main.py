@@ -18,7 +18,7 @@ def SetupNewChain():
     response = subprocess.getstatusoutput(f"make install --directory={FURY_DIR_PATH}")
     print(response[1])
     print("binary re-build done ✔️")
-    subprocess.getstatusoutput("sudo mv ~/go/bin/fury /usr/local/bin")
+    subprocess.getstatusoutput("sudo mv ~/bin/bin/fury /usr/local/bin")
     subprocess.getstatusoutput(f"fury init {NODE_MONIKER} --chain-id {CHAIN_ID}")
     subprocess.getstatusoutput(f"fury keys add {GENESIS_ACCOUNT_NAME} --keyring-backend test")
     subprocess.getstatusoutput(f"fury add-genesis-account $(fury keys show cooluser --keyring-backend test -a) {GENESIS_TOKENS}")
