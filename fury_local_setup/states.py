@@ -3,7 +3,7 @@ from constants import *
 APPS = [
     # [name, shortName, minGovDeposit, govTimeInSeconds]
    
-    ["cswap", "cswap", 0, 0],  # ID - 2
+    ["calma", "calma", 0, 0],  # ID - 2
      ["harbor", "hbr", 1000000, 5],  # ID - 1
     ["commodo", "comdo", 0, 0],  # ID - 3
 ]
@@ -11,13 +11,13 @@ APPS = [
 ASSETS = [
     # [name, denom, isOnChain, assetOraclePriceRequired]
     ["ATOM", "uatom", 0, 1],  # ID - 1
-    ["CMDX", "ucmdx", 0, 1],  # ID - 2
-    ["CMST", "ucmst", 0, 0],  # ID - 3
+    ["FURY", "ufury", 0, 1],  # ID - 2
+    ["FUST", "ufust", 0, 0],  # ID - 3
     ["OSMO", "uosmo", 0, 1],  # ID - 4
-    ["CATOM", "ucatom", 0, 0],  # ID - 5
-    ["CCMDX", "uccmdx", 0, 0],  # ID - 6
-    ["CCMST", "uccmst", 0, 0],  # ID - 7
-    ["COSMO", "ucosmo", 0, 0],  # ID - 8
+    ["sATOM", "usatom", 0, 0],  # ID - 5
+    ["sFURY", "usfury", 0, 0],  # ID - 6
+    ["sFUST", "usfust", 0, 0],  # ID - 7
+    ["sOSMO", "usosmo", 0, 0],  # ID - 8
     ["HARBOR", "uharbor", 1, 0],  # ID - 9
 ]
 
@@ -42,7 +42,7 @@ LIQUIDITY_POOLS = [
 ADD_ASSET_RATES = [
     # [ assetName, jsonObject]
     [
-        "CMST",
+        "FUST",
         {
             "asset_id": "3",
             "u_optimal": "0.8",
@@ -59,9 +59,9 @@ ADD_ASSET_RATES = [
             "liquidation_bonus": "0.025",
             "reserve_factor": "0.1",
             "c_asset_id": "7",
-            "title": "Add Asset Rates Stats CMST",
-            "description": "adding asset rates stats for CMST",
-            "deposit": "10000000ucmdx",
+            "title": "Add Asset Rates Stats FUST",
+            "description": "adding asset rates stats for FUST",
+            "deposit": "10000000ufury",
         },
     ],
     [
@@ -84,7 +84,7 @@ ADD_ASSET_RATES = [
             "c_asset_id": "5",
             "title": "Add Asset Rates Stats ATOM",
             "description": "adding asset rates stats ATOM",
-            "deposit": "10000000ucmdx",
+            "deposit": "10000000ufury",
         },
     ],
     [
@@ -107,11 +107,11 @@ ADD_ASSET_RATES = [
             "c_asset_id": "8",
             "title": "Add Asset Rates Stats OSMO",
             "description": "adding asset rates stats OSMO",
-            "deposit": "10000000ucmdx",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "CMDX",
+        "FURY",
         {
             "asset_id": "2",
             "u_optimal": "0.5",
@@ -128,26 +128,26 @@ ADD_ASSET_RATES = [
             "liquidation_bonus": "0.05",
             "reserve_factor": "0.2",
             "c_asset_id": "6",
-            "title": "Add Asset Rates Stats CMDX",
-            "description": "adding asset rates stats CMDX",
-            "deposit": "10000000ucmdx",
+            "title": "Add Asset Rates Stats FURY",
+            "description": "adding asset rates stats FURY",
+            "deposit": "10000000ufury",
         },
     ],
 ]
 
 ADD_LEND_POOL = [
     {
-        "module_name": "cmdx",
+        "module_name": "fury",
         "main_asset_id": "2",
         "first_bridged_asset_id": "3",
         "second_bridged_asset_id": "1",
         "asset_id": "1,2,3",
         "is_bridged_asset": "1,0,1",
-        "c_pool_name": "CMDX-ATOM-CMST",
+        "c_pool_name": "FURY-ATOM-FUST",
         "reserve_funds": "100000000",
         "title": "Add pool",
         "description": "adding pool",
-        "deposit": "10000000ucmdx",
+        "deposit": "10000000ufury",
     },
     {
         "module_name": "osmo",
@@ -156,104 +156,104 @@ ADD_LEND_POOL = [
         "second_bridged_asset_id": "1",
         "asset_id": "1,4,3",
         "is_bridged_asset": "1,0,1",
-        "c_pool_name": "OSMO-ATOM-CMST",
+        "c_pool_name": "OSMO-ATOM-FUST",
         "reserve_funds": "100000000",
         "title": "Add pool",
         "description": "adding pool",
-        "deposit": "10000000ucmdx",
+        "deposit": "10000000ufury",
     },
 ]
 
 ADD_LEND_PAIR = [
     [
-        "CMDX-CMST",
+        "FURY-FUST",
         {
             "asset_in": "2",
             "asset_out": "3",
             "is_inter_pool": "0",
             "asset_out_pool_id": "1",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair CMDX-CMST",
-            "description": "adding extended pairs for CMDX-CMST same pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair FURY-FUST",
+            "description": "adding extended pairs for FURY-FUST same pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "CMDX-ATOM",
+        "FURY-ATOM",
         {
             "asset_in": "2",
             "asset_out": "1",
             "is_inter_pool": "0",
             "asset_out_pool_id": "1",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair CMDX-ATOM",
-            "description": "adding extended pairs CMDX-ATOM same pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair FURY-ATOM",
+            "description": "adding extended pairs FURY-ATOM same pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "ATOM-CMDX",
+        "ATOM-FURY",
         {
             "asset_in": "1",
             "asset_out": "2",
             "is_inter_pool": "0",
             "asset_out_pool_id": "1",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair ATOM-CMDX",
-            "description": "adding extended pairs ATOM-CMDX same pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair ATOM-FURY",
+            "description": "adding extended pairs ATOM-FURY same pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "ATOM-CMST",
+        "ATOM-FUST",
         {
             "asset_in": "1",
             "asset_out": "3",
             "is_inter_pool": "0",
             "asset_out_pool_id": "1",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair ATOM-CMST",
-            "description": "adding extended pairs ATOM-CMST same pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair ATOM-FUST",
+            "description": "adding extended pairs ATOM-FUST same pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "CMST-CMDX",
+        "FUST-FURY",
         {
             "asset_in": "3",
             "asset_out": "2",
             "is_inter_pool": "0",
             "asset_out_pool_id": "1",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair CMST-CMDX",
-            "description": "adding extended pairs CMST-CMDX same pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair FUST-FURY",
+            "description": "adding extended pairs FUST-FURY same pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "CMST-ATOM",
+        "FUST-ATOM",
         {
             "asset_in": "3",
             "asset_out": "1",
             "is_inter_pool": "0",
             "asset_out_pool_id": "1",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair CMST-ATOM",
-            "description": "adding extended pairs CMST-ATOM same pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair FUST-ATOM",
+            "description": "adding extended pairs FUST-ATOM same pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "OSMO-CMST",
+        "OSMO-FUST",
         {
             "asset_in": "4",
             "asset_out": "3",
             "is_inter_pool": "0",
             "asset_out_pool_id": "2",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair OSMO-CMST",
-            "description": "adding extended pairs OSMO-CMST same pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair OSMO-FUST",
+            "description": "adding extended pairs OSMO-FUST same pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
@@ -266,7 +266,7 @@ ADD_LEND_PAIR = [
             "min_usd_value_left": "100000000000",
             "title": "Add Extended pair OSMO-ATOM",
             "description": "adding extended pairs OSMO-ATOM same pool",
-            "deposit": "10000000ucmdx",
+            "deposit": "10000000ufury",
         },
     ],
     [
@@ -279,72 +279,72 @@ ADD_LEND_PAIR = [
             "min_usd_value_left": "100000000000",
             "title": "Add Extended pair ATOM-OSMO",
             "description": "adding extended pairs ATOM-OSMO same pool",
-            "deposit": "10000000ucmdx",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "ATOM-CMST",
+        "ATOM-FUST",
         {
             "asset_in": "1",
             "asset_out": "3",
             "is_inter_pool": "0",
             "asset_out_pool_id": "2",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair ATOM-CMST",
-            "description": "adding extended pairs ATOM-CMST same pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair ATOM-FUST",
+            "description": "adding extended pairs ATOM-FUST same pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "CMST-OSMO",
+        "FUST-OSMO",
         {
             "asset_in": "3",
             "asset_out": "4",
             "is_inter_pool": "0",
             "asset_out_pool_id": "2",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair CMST-OSMO",
-            "description": "adding extended pairs CMST-OSMO same pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair FUST-OSMO",
+            "description": "adding extended pairs FUST-OSMO same pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "CMST-ATOM",
+        "FUST-ATOM",
         {
             "asset_in": "3",
             "asset_out": "1",
             "is_inter_pool": "0",
             "asset_out_pool_id": "2",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair CMST-ATOM",
-            "description": "adding extended pairs CMST-ATOM same pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair FUST-ATOM",
+            "description": "adding extended pairs FUST-ATOM same pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "CMDX-OSMO",
+        "FURY-OSMO",
         {
             "asset_in": "2",
             "asset_out": "4",
             "is_inter_pool": "1",
             "asset_out_pool_id": "2",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair CMDX-OSMO",
-            "description": "adding extended pairs CMDX-OSMO cross pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair FURY-OSMO",
+            "description": "adding extended pairs FURY-OSMO cross pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "CMST-OSMO",
+        "FUST-OSMO",
         {
             "asset_in": "3",
             "asset_out": "4",
             "is_inter_pool": "1",
             "asset_out_pool_id": "2",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair CMST-OSMO",
-            "description": "adding extended pairs CMST-OSMO cross pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair FUST-OSMO",
+            "description": "adding extended pairs FUST-OSMO cross pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
@@ -357,46 +357,46 @@ ADD_LEND_PAIR = [
             "min_usd_value_left": "100000000000",
             "title": "Add Extended pair ATOM-OSMO",
             "description": "adding extended pairs ATOM-OSMO cross pool",
-            "deposit": "10000000ucmdx",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "OSMO-CMDX",
+        "OSMO-FURY",
         {
             "asset_in": "4",
             "asset_out": "2",
             "is_inter_pool": "1",
             "asset_out_pool_id": "1",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair OSMO-CMDX",
-            "description": "adding extended pairs OSMO-CMDX cross pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair OSMO-FURY",
+            "description": "adding extended pairs OSMO-FURY cross pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "CMST-CMDX",
+        "FUST-FURY",
         {
             "asset_in": "3",
             "asset_out": "2",
             "is_inter_pool": "1",
             "asset_out_pool_id": "1",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair CMST-CMDX",
-            "description": "adding extended pairs CMST-CMDX cross pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair FUST-FURY",
+            "description": "adding extended pairs FUST-FURY cross pool",
+            "deposit": "10000000ufury",
         },
     ],
     [
-        "ATOM-CMDX",
+        "ATOM-FURY",
         {
             "asset_in": "1",
             "asset_out": "2",
             "is_inter_pool": "1",
             "asset_out_pool_id": "1",
             "min_usd_value_left": "100000000000",
-            "title": "Add Extended pair ATOM-CMDX",
-            "description": "adding extended pairs ATOM-CMDX cross pool",
-            "deposit": "10000000ucmdx",
+            "title": "Add Extended pair ATOM-FURY",
+            "description": "adding extended pairs ATOM-FURY cross pool",
+            "deposit": "10000000ufury",
         },
     ],
 ]
@@ -415,16 +415,16 @@ WASM_CONTRACTS = [
     {
         "name": "Vesting Contract",
         "contractAddressKey": "vesting_contract",
-        "contractLink": "https://github.com/comdex-official/test-wasm-artifacts/raw/main/token_vesting.wasm",
-        "contractPath": f"{COMDEX_DIR_PATH}/scripts/comdex_local_setup/token_vesting.wasm",
+        "contractLink": "https://github.com/fury-official/test-wasm-artifacts/raw/main/token_vesting.wasm",
+        "contractPath": f"{COMDEX_DIR_PATH}/scripts/fury_local_setup/token_vesting.wasm",
         "initator": {},
         "formatKeys": []
     },
     {
         "name": "Locking Contract",
         "contractAddressKey": "locking_contract",
-        "contractLink": "https://github.com/comdex-official/test-wasm-artifacts/raw/main/locking_contract.wasm",
-        "contractPath": f"{COMDEX_DIR_PATH}/scripts/comdex_local_setup/locking_contract.wasm",
+        "contractLink": "https://github.com/fury-official/test-wasm-artifacts/raw/main/locking_contract.wasm",
+        "contractPath": f"{COMDEX_DIR_PATH}/scripts/fury_local_setup/locking_contract.wasm",
         "initator": {
             "t1": {"period": 500, "weight": "0.25"},
             "t2": {"period": 1000, "weight": "0.50"},
@@ -432,7 +432,7 @@ WASM_CONTRACTS = [
             "t4": {"period": 5000, "weight": "1.0"},
             "voting_period": 22500,
             "vesting_contract": "",
-            "foundation_addr": ["comdex1rljg3wwgv6qezu3p05vxny9pwk3mdwl0ja407z"],
+            "foundation_addr": ["fury1rljg3wwgv6qezu3p05vxny9pwk3mdwl0ja407z"],
             "foundation_percentage": "0.2",
             "surplus_asset_id": 3,
             "emission": {
@@ -448,8 +448,8 @@ WASM_CONTRACTS = [
     {
         "name": "Governance Contract",
         "contractAddressKey": "governance_contract",
-        "contractLink": "https://github.com/comdex-official/test-wasm-artifacts/raw/main/governance.wasm",
-        "contractPath": f"{COMDEX_DIR_PATH}/scripts/comdex_local_setup/governance.wasm",
+        "contractLink": "https://github.com/fury-official/test-wasm-artifacts/raw/main/governance.wasm",
+        "contractPath": f"{COMDEX_DIR_PATH}/scripts/fury_local_setup/governance.wasm",
         "initator": {
             "threshold": {"threshold_quorum": {"threshold": "0.50", "quorum": "0.33"}},
             "target": "0.0.0.0:9090",
@@ -473,8 +473,8 @@ WASM_PROPOSALS = [
         "content": {
             "propose": {
                 "propose": {
-                    "title": "New proposal for add vault pair for CMDX C - CMST",
-                    "description": "This is a base execution proposal to add CMDX C - CMST vault pair with given Vault properties a. Liquidation ratio : 140 % b. Stability Fee : 1%  c. Liquidation Penalty : 12% d. DrawDown Fee : 1% e. Debt Cieling : 100000000 CMST f. Debt Floor : 100 CMST ",
+                    "title": "New proposal for add vault pair for FURY C - FUST",
+                    "description": "This is a base execution proposal to add FURY C - FUST vault pair with given Vault properties a. Liquidation ratio : 140 % b. Stability Fee : 1%  c. Liquidation Penalty : 12% d. DrawDown Fee : 1% e. Debt Cieling : 100000000 FUST f. Debt Floor : 100 FUST ",
                     "msgs": [
                         {
                             "msg_add_extended_pairs_vault": {
@@ -509,7 +509,7 @@ WASM_PROPOSALS = [
             "propose": {
                 "propose": {
                     "title": "New proposal to initialise collector param for stability fee and auction (surplus and debt)threshold data",
-                    "description": "This is an base  execution proposal to initialise CMST and HARBOR pair for Surplus and dutch auction with Debt Threshold being  1000 CMST and Surplus Threshold as 100000000 CMST  ",
+                    "description": "This is an base  execution proposal to initialise FUST and HARBOR pair for Surplus and dutch auction with Debt Threshold being  1000 FUST and Surplus Threshold as 100000000 FUST  ",
                     "msgs": [
                         {
                             "msg_set_collector_lookup_table": {
@@ -567,8 +567,8 @@ WASM_PROPOSALS = [
         "content": {
             "propose": {
                 "propose": {
-                    "title": "New proposal to whitelist CMST for locker",
-                    "description": "This is an base  execution proposal to add use CMST as locker deposit asset.",
+                    "title": "New proposal to whitelist FUST for locker",
+                    "description": "This is an base  execution proposal to add use FUST as locker deposit asset.",
                     "msgs": [
                         {
                             "msg_set_auction_mapping_for_app": {
@@ -594,8 +594,8 @@ WASM_PROPOSALS = [
         "content": {
             "propose": {
                 "propose": {
-                    "title": "New proposal to whitelist CMST for locker",
-                    "description": "This is an base  execution proposal to add use CMST as locker deposit asset.",
+                    "title": "New proposal to whitelist FUST for locker",
+                    "description": "This is an base  execution proposal to add use FUST as locker deposit asset.",
                     "msgs": [
                         {"msg_white_list_asset_locker": {"app_id": 2, "asset_id": 3}}
                     ],
@@ -611,8 +611,8 @@ WASM_PROPOSALS = [
         "content": {
             "propose": {
                 "propose": {
-                    "title": "New proposal to whitelist CMST for locker",
-                    "description": "This is an base  execution proposal to add use CMST as locker deposit asset.",
+                    "title": "New proposal to whitelist FUST for locker",
+                    "description": "This is an base  execution proposal to add use FUST as locker deposit asset.",
                     "msgs": [
                         {
                             "msg_whitelist_app_id_locker_rewards": {
@@ -633,8 +633,8 @@ WASM_PROPOSALS = [
         "content": {
             "propose": {
                 "propose": {
-                    "title": "New proposal to whitelist CMST for locker",
-                    "description": "This is an base  execution proposal to add use CMST as locker deposit asset.",
+                    "title": "New proposal to whitelist FUST for locker",
+                    "description": "This is an base  execution proposal to add use FUST as locker deposit asset.",
                     "msgs": [{"msg_whitelist_app_id_vault_interest": {"app_id": 2}}],
                     "app_id_param": 2,
                 }
@@ -648,8 +648,8 @@ WASM_PROPOSALS = [
         "content": {
             "propose": {
                 "propose": {
-                    "title": "New proposal for add pair for CMDX",
-                    "description": "This is an base proposal execution proposal to add CMDX-CMST n.",
+                    "title": "New proposal for add pair for FURY",
+                    "description": "This is an base proposal execution proposal to add FURY-FUST n.",
                     "msgs": [{"msg_whitelist_app_id_liquidation": {"app_id": 2}}],
                     "app_id_param": 2,
                 }
@@ -688,8 +688,8 @@ WASM_PROPOSALS = [
         "content": {
             "propose": {
                 "propose": {
-                    "title": "New proposal for add vault pair for CMDX C - CMST",
-                    "description": "This is a base execution proposal to add CMDX C - CMST vault pair with given Vault properties a. Liquidation ratio : 140 % b. Stability Fee : 1%  c. Liquidation Penalty : 12% d. DrawDown Fee : 1% e. Debt Cieling : 100000000 CMST f. Debt Floor : 100 CMST ",
+                    "title": "New proposal for add vault pair for FURY C - FUST",
+                    "description": "This is a base execution proposal to add FURY C - FUST vault pair with given Vault properties a. Liquidation ratio : 140 % b. Stability Fee : 1%  c. Liquidation Penalty : 12% d. DrawDown Fee : 1% e. Debt Cieling : 100000000 FUST f. Debt Floor : 100 FUST ",
                     "msgs": [
                         {
                             "msg_add_extended_pairs_vault": {
@@ -704,7 +704,7 @@ WASM_PROPOSALS = [
                                 "debt_floor": 100000000,
                                 "is_stable_mint_vault": False,
                                 "min_cr": "1.7",
-                                "pair_name": "CMDX-A",
+                                "pair_name": "FURY-A",
                                 "asset_out_oracle_price": False,
                                 "asset_out_price": 1000000,
                                 "min_usd_value_left": 100000,
