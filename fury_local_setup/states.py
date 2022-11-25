@@ -416,7 +416,7 @@ WASM_CONTRACTS = [
         "name": "Vesting Contract",
         "contractAddressKey": "vesting_contract",
         "contractLink": "https://github.com/fury-official/test-wasm-artifacts/raw/main/token_vesting.wasm",
-        "contractPath": f"{COMDEX_DIR_PATH}/scripts/fury_local_setup/token_vesting.wasm",
+        "contractPath": f"{FURY_DIR_PATH}/scripts/fury_local_setup/token_vesting.wasm",
         "initator": {},
         "formatKeys": []
     },
@@ -424,7 +424,7 @@ WASM_CONTRACTS = [
         "name": "Locking Contract",
         "contractAddressKey": "locking_contract",
         "contractLink": "https://github.com/fury-official/test-wasm-artifacts/raw/main/locking_contract.wasm",
-        "contractPath": f"{COMDEX_DIR_PATH}/scripts/fury_local_setup/locking_contract.wasm",
+        "contractPath": f"{FURY_DIR_PATH}/scripts/fury_local_setup/locking_contract.wasm",
         "initator": {
             "t1": {"period": 500, "weight": "0.25"},
             "t2": {"period": 1000, "weight": "0.50"},
@@ -449,7 +449,7 @@ WASM_CONTRACTS = [
         "name": "Governance Contract",
         "contractAddressKey": "governance_contract",
         "contractLink": "https://github.com/fury-official/test-wasm-artifacts/raw/main/governance.wasm",
-        "contractPath": f"{COMDEX_DIR_PATH}/scripts/fury_local_setup/governance.wasm",
+        "contractPath": f"{FURY_DIR_PATH}/scripts/fury_local_setup/governance.wasm",
         "initator": {
             "threshold": {"threshold_quorum": {"threshold": "0.50", "quorum": "0.33"}},
             "target": "0.0.0.0:9090",

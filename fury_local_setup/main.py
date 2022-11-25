@@ -15,7 +15,7 @@ def SetupNewChain():
     subprocess.getstatusoutput("rm -rf ~/.fury")
     print("deleted previos state")
     print("rebuilding binaries.....")
-    response = subprocess.getstatusoutput(f"make install --directory={COMDEX_DIR_PATH}")
+    response = subprocess.getstatusoutput(f"make install --directory={FURY_DIR_PATH}")
     print(response[1])
     print("binary re-build done ✔️")
     subprocess.getstatusoutput("sudo mv ~/go/bin/fury /usr/local/bin")
@@ -414,8 +414,8 @@ def CreateState():
 def main():
     if not os.path.exists(HOME_DIR):
         exit(f"Error - root dir not found {HOME_DIR}")
-    if not os.path.exists(COMDEX_DIR_PATH):
-        exit(f"Error - invalid fury repo path {COMDEX_DIR_PATH}")
+    if not os.path.exists(FURY_DIR_PATH):
+        exit(f"Error - invalid fury repo path {FURY_DIR_PATH}")
     SetupNewChain()
     thr = threading.Thread(target=StartChain, args=(), kwargs={})
     thr.start()
